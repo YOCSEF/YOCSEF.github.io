@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCF YOCSEF - 青年计算机科技论坛</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* 头部样式 */
+        header {
+            background: linear-gradient(135deg, #1a5fb4 0%, #2d7bc6 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        /* 介绍部分样式 */
+        .intro-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .intro-section h2 {
+            color: #1a5fb4;
+            border-bottom: 2px solid #e1e8ed;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        /* 表格部分样式 */
+        .table-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            overflow-x: auto;
+        }
+        
+        .table-section h2 {
+            color: #1a5fb4;
+            border-bottom: 2px solid #e1e8ed;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e1e8ed;
+        }
+        
+        th {
+            background-color: #f1f7fd;
+            font-weight: 600;
+            color: #1a5fb4;
+        }
+        
+        tr:hover {
+            background-color: #f9fbff;
+        }
+        
+        .forum-link {
+            color: #1a5fb4;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .forum-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* 四个板块容器 */
+        .sections-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .sections-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .info-section {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .info-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-section h3 {
+            color: #1a5fb4;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-section h3:before {
+            content: "•";
+            color: #1a5fb4;
+            font-size: 2rem;
+            margin-right: 10px;
+        }
+        
+        .info-section ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        .info-section li {
+            margin-bottom: 8px;
+        }
+        
+        /* 底部样式 */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 10px 10px 0 0;
+            margin-top: 30px;
+        }
+        
+        footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            header p {
+                font-size: 1rem;
+            }
+            
+            .intro-section, .table-section, .info-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>CCF YOCSEF</h1>
+            <p>中国计算机学会青年计算机科技论坛</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="intro-section">
+            <h2>关于CCF YOCSEF</h2>
+            <p>CCF青年计算机科技论坛（CCF Young Computer Scientists & Engineers Forum，简称CCF YOCSEF）是由中国计算机学会（CCF）于1998年创建的系列性专业性活动。YOCSEF以"承担社会责任、提升成员能力"为宗旨，由来自全国有社会责任感、有激情、有思想的青年学者、企业家及其他各界青年精英参与策划与组织，是CCF最具活力的组成部分。</p>
+            <p>YOCSEF的活动形式主要包括专题论坛和学术报告会，此外还有学术评价、评奖、扶贫助教等。YOCSEF论坛针对计算机学术、产业、技术和社会热点问题进行思辨，向全社会发出专业的和有思考的声音。YOCSEF是CCF的创新机制的试验田，平等、民主的氛围吸引和造就了一批CCF的中坚力量。</p>
+            <p>YOCSEF总部设在北京，并已在杭州、上海、长沙、沈阳、哈尔滨、济南、广州、重庆、武汉、成都、郑州、苏州、大连、西安、青岛、深圳、天津、南京、合肥、太原、兰州、厦门、昆明、桂林、长春、福州、保定等27个大城市建立了分论坛，每年活动两百多次，已成为国内非常有影响力的品牌活动。</p>
+        </section>
+
+        <section class="table-section">
+            <h2>YOCSEF 活动列表</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>论坛时间</th>
+                        <th>论坛名称</th>
+                        <th>论坛组织机构</th>
+                        <th>论坛宣传页面</th>
+                        <th>论坛总结</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024年4月19日</td>
+                        <td>卫星计算：算在何方</td>
+                        <td>CCF YOCSEF主办，银河航天支持</td>
+                        <td><a href="#" class="forum-link">查看详情</a></td>
+                        <td>探讨卫星计算领域的科学问题及技术挑战，为我国卫星互联网技术发展提供参考</td>
+                    </tr>
+                    <tr>
+                        <td>2023年5月28日</td>
+                        <td>YOCSEF天津AC换届会议</td>
+                        <td>CCF YOCSEF天津学术委员会</td>
+                        <td><a href="#" class="forum-link">查看详情</a></td>
+                        <td>完成YOCSEF天津2023-2024年度学术委员会换届工作</td>
+                    </tr>
+                    <tr>
+                        <td>2023年（多次举办）</td>
+                        <td>智能网联人才培养如何适应产业发展</td>
+                        <td>CCF YOCSEF天津</td>
+                        <td><a href="#" class="forum-link">查看详情</a></td>
+                        <td>探讨产教融合创新，构筑信创人才培养新高地</td>
+                    </tr>
+                    <tr>
+                        <td>2022-2023年</td>
+                        <td>量子计算系列论坛</td>
+                        <td>多个YOCSEF分论坛</td>
+                        <td><a href="#" class="forum-link">查看详情</a></td>
+                        <td>探讨量子计算何时可带来产业和科技变革</td>
+                    </tr>
+                    <tr>
+                        <td>2022年</td>
+                        <td>超算平民化、全球化行不行</td>
+                        <td>CCF YOCSEF天津</td>
+                        <td><a href="#" class="forum-link">查看详情</a></td>
+                        <td>思辨超算技术普及化与全球化发展的可行性与挑战</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div class="sections-container">
+            <section class="info-section">
+                <h3>文化</h3>
+                <p>YOCSEF文化以平等、民主、开放为核心特征，营造自由交流的学术氛围。其主要文化特点包括：</p>
+                <ul>
+                    <li><strong>平等民主</strong>：不论资历深浅，鼓励每位成员平等参与、自由表达</li>
+                    <li><strong>开放包容</strong>：对参与者无限制，开放式机制吸引各方人才</li>
+                    <li><strong>社会责任</strong>：关注国家大事、宏观政策，积极向社会发出专业声音</li>
+                    <li><strong>创新探索</strong>：作为CCF创新机制的试验田，鼓励新思想、新方法的探索</li>
+                    <li><strong>传承发展</strong>：注重青年计算机科技人才的培养与成长</li>
+                </ul>
+            </section>
+
+            <section class="info-section">
+                <h3>规则</h3>
+                <p>YOCSEF遵循一套完善的组织规则和运作机制，确保活动高质量开展：</p>
+                <ul>
+                    <li><strong>委员制</strong>：45岁以下CCF会员可成为YOCSEF委员，通过竞选产生学术委员会职位</li>
+                    <li><strong>活动形式</strong>：主要包括观点论坛、技术论坛、Club活动三种基本形式</li>
+                    <li><strong>开放式规则</strong>：任何人都有机会策划、组织、演讲、赞助、报道和参与</li>
+                    <li><strong>双轮驱动</strong>：靠最新技术报告和IT界热点问题讨论两个"轮子"支撑</li>
+                    <li><strong>分论坛机制</strong>：在全国27个城市建立分论坛，统一规范又保持地方特色</li>
+                    <li><strong>年度换届</strong>：学术委员会实行年度换届制度，保持组织活力</li>
+                </ul>
+            </section>
+
+            <section class="info-section">
+                <h3>历史</h3>
+                <p>YOCSEF自1998年创建以来，走过了辉煌的发展历程：</p>
+                <ul>
+                    <li><strong>1998年</strong>：CCF YOCSEF正式创建，开始举办系列性专业活动</li>
+                    <li><strong>2000年代</strong>：陆续在杭州、上海、长沙等地建立分论坛，扩大影响力</li>
+                    <li><strong>2010年</strong>：YOCSEF天津等分论坛成立，进一步扩展全国网络</li>
+                    <li><strong>2016-2017年</strong>：韩银和担任YOCSEF主席</li>
+                    <li><strong>2020年</strong>：适应疫情变化，创新活动形式，开展线上论坛</li>
+                    <li><strong>2022-2023年</strong>：YOCSEF天津荣获"优秀分论坛"称号</li>
+                    <li><strong>2024年</strong>：举办"卫星计算：算在何方"等前沿技术论坛</li>
+                </ul>
+                <p>25年来，YOCSEF走出了众多知名学者和企业家，如陈左宁、张尧学、谭铁牛、怀进鹏、吕建、梅宏、吴朝晖、王恩东等院士，以及众多产业界领袖。</p>
+            </section>
+
+            <section class="info-section">
+                <h3>工具</h3>
+                <p>YOCSEF为成员和参与者提供多种工具和资源支持：</p>
+                <ul>
+                    <li><strong官方平台</strong>：官方网站(http://www.yocsef.org.cn)提供最新活动信息和资源</li>
+                    <li><strong>联系渠道</strong>：总部联系电话(+86)10 6256 2503，邮箱ccf@ccf.org.cn</li>
+                    <li><strong>协作工具</strong>：使用现代化协作平台进行活动策划和组织</li>
+                    <li><strong>媒体资源</strong>：与多家专业媒体合作，扩大论坛影响力</li>
+                    <li><strong>文献资料</strong>：提供历年论坛总结报告和技术文档</li>
+                    <li><strong>分会资源</strong>：各分论坛设有独立的活动平台和联系渠道</li>
+                </ul>
+                <p>此外，YOCSEF还通过社交媒体、邮件列表等多种渠道保持与会员和关注者的互动，确保信息及时传达。</p>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 中国计算机学会（CCF）青年计算机科技论坛（YOCSEF） | 电话：(+86)10 6256 2503 | 邮箱：ccf@ccf.org.cn</p>
+            <p>官网：<a href="http://www.yocsef.org.cn">http://www.yocsef.org.cn</a> | 本文档内容基于CCF YOCSEF公开资料整理</p>
+        </div>
+    </footer>
+</body>
+</html>
