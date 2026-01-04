@@ -119,6 +119,73 @@
             text-decoration: underline;
         }
         
+        /* 论坛列表部分样式 */
+        .forums-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+        
+        .forums-section h2 {
+            color: #1a5fb4;
+            border-bottom: 2px solid #e1e8ed;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+        }
+        
+        .forums-container {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 20px;
+        }
+        
+        .forum-item {
+            aspect-ratio: 1/1; /* 保持正方形 */
+        }
+        
+        .forum-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease;
+        }
+        
+        .forum-link:hover {
+            transform: translateY(-5px);
+        }
+        
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .city-name {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 95, 180, 0.85);
+            color: white;
+            padding: 10px 5px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
         /* 四个板块容器 */
         .sections-container {
             display: grid;
@@ -186,7 +253,18 @@
         }
         
         /* 响应式调整 */
-        @media (max-width: 600px) {
+        @media (max-width: 1200px) {
+            .forums-container {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .forums-container {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+            }
+            
             .container {
                 padding: 10px;
             }
@@ -199,8 +277,19 @@
                 font-size: 1rem;
             }
             
-            .intro-section, .table-section, .info-section {
+            .intro-section, .table-section, .forums-section, .info-section {
                 padding: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .forums-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .city-name {
+                font-size: 0.8rem;
+                padding: 8px 3px;
             }
         }
     </style>
@@ -216,7 +305,7 @@
     <div class="container">
         <section class="intro-section">
             <h2>关于CCF YOCSEF</h2>
-            <p>CCF青年计算机科技论坛（CCF Young Computer Scientists & Engineers Forum，简称CCF YOCSEF）是由中国计算机学会（CCF）于1998年创建的系列性专业性活动。YOCSEF以"承担社会责任、提升成员能力"为宗旨，由来自全国有社会责任感、有激情、有思想的青年学者、企业家及其他各界青年精英参与策划与组织，是CCF最具活力的组成部分。</p>
+            <p>CCF青年计算机科技论坛（CCF Young Computer Scientists & Engineers Forum，简称CCF YOCSEF）是由中国计算机学会（CCF）于1998年创建的系列性专业性活动。YOCSEF以"承担社会责任、提升成员能力"为宗旨，由来自全国有社会责任感、有激情、有思想的青年学者、企业家及其他各界青年精英参与策划与组织，是CCF最具活力的组成部分[1](@ref)。</p>
             <p>YOCSEF的活动形式主要包括专题论坛和学术报告会，此外还有学术评价、评奖、扶贫助教等。YOCSEF论坛针对计算机学术、产业、技术和社会热点问题进行思辨，向全社会发出专业的和有思考的声音。YOCSEF是CCF的创新机制的试验田，平等、民主的氛围吸引和造就了一批CCF的中坚力量。</p>
             <p>YOCSEF总部设在北京，并已在杭州、上海、长沙、沈阳、哈尔滨、济南、广州、重庆、武汉、成都、郑州、苏州、大连、西安、青岛、深圳、天津、南京、合肥、太原、兰州、厦门、昆明、桂林、长春、福州、保定等27个大城市建立了分论坛，每年活动两百多次，已成为国内非常有影响力的品牌活动。</p>
         </section>
@@ -273,6 +362,267 @@
             </table>
         </section>
 
+        <section class="forums-section">
+            <h2>CCF YOCSEF 论坛网络</h2>
+            <div class="forums-container">
+                <!-- 总部 -->
+                <div class="forum-item">
+                    <a href="#" class="forum-link">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150/1a5fb4/ffffff?text=北京" alt="北京 - 总部">
+                            <div class="city-name">北京 - 总部</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- 分论坛 -->
+                <div class="forum-item">
+                    <a href="#" class="forum-link">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150/2d7bc6/ffffff?text=杭州" alt="杭州">
+                            <div class="city-name">杭州</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="forum-item">
+                    <a href="#" class="forum-link">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150/1a5fb4/ffffff?text=上海" alt="上海">
+                            <div class="city-name">上海</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="forum-item">
+                    <a href="#" class="forum-link">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150/2d7bc6/ffffff?text=长沙" alt="长沙">
+                            <div class="city-name">长沙</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="forum-item">
+                    <a href="#" class="forum-link">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150/1a5fb4/ffffff?text=沈阳" alt="沈阳">
+                            <div class="city-name">沈阳</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="forum-item">
+                    <a href="#" class="forum-link">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150/2d7bc6/ffffff?text=哈尔滨" alt="哈尔滨">
+                            <div class="city-name">哈尔滨</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="forum-item">
+                    <a href="#" class="forum-link">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150/1a5fb4/ffffff?text=济南" alt="济南">
+                            <div class="city-name">济南</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="forum-item">
+                    <a href="#" class="forum-link">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150/2d7bc6/ffffff?text=广州" alt="广州">
+                            <div class="city-name">广州</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="forum-item">
+                    <a href="#" class="forum-link">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150/1a5fb4/ffffff?text=重庆" alt="重庆">
+                            <div class="city-name">重庆</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="forum-item">
+                    <a href="#" class="forum-link">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150/2d7bc6/ffffff?text=武汉" alt="武汉">
+                            <div class="city-name">武汉</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- 第二行 -->
+                <div class="forum-item">
+                    <a href="#" class="forum-link">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150/1a5fb4/ffffff?text=成都" alt="成都">
+                            <div class="city-name">成都</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="forum-item">
+                    <a href="#" class="forum-link">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150/2d7bc6/ffffff?text=郑州" alt="郑州">
+                            <div class="city-name">郑州</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="forum-item">
+                    <a href="#" class="forum-link">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150/1a5fb4/ffffff?text=苏州" alt="苏州">
+                            <div class="city-name">苏州</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="forum-item">
+                    <a href="#" class="forum-link">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150/2d7bc6/ffffff?text=大连" alt="大连">
+                            <div class="city-name">大连</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="forum-item">
+                    <a href="#" class="forum-link">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150/1a5fb4/ffffff?text=西安" alt="西安">
+                            <div class="city-name">西安</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="forum-item">
+                    <a href="#" class="forum-link">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150/2d7bc6/ffffff?text=青岛" alt="青岛">
+                            <div class="city-name">青岛</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="forum-item">
+                    <a href="#" class="forum-link">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150/1a5fb4/ffffff?text=深圳" alt="深圳">
+                            <div class="city-name">深圳</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="forum-item">
+                    <a href="#" class="forum-link">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150/2d7bc6/ffffff?text=天津" alt="天津">
+                            <div class="city-name">天津</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="forum-item">
+                    <a href="#" class="forum-link">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150/1a5fb4/ffffff?text=南京" alt="南京">
+                            <div class="city-name">南京</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="forum-item">
+                    <a href="#" class="forum-link">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150/2d7bc6/ffffff?text=合肥" alt="合肥">
+                            <div class="city-name">合肥</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- 第三行 -->
+                <div class="forum-item">
+                    <a href="#" class="forum-link">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150/1a5fb4/ffffff?text=太原" alt="太原">
+                            <div class="city-name">太原</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="forum-item">
+                    <a href="#" class="forum-link">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150/2d7bc6/ffffff?text=兰州" alt="兰州">
+                            <div class="city-name">兰州</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="forum-item">
+                    <a href="#" class="forum-link">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150/1a5fb4/ffffff?text=厦门" alt="厦门">
+                            <div class="city-name">厦门</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="forum-item">
+                    <a href="#" class="forum-link">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150/2d7bc6/ffffff?text=昆明" alt="昆明">
+                            <div class="city-name">昆明</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="forum-item">
+                    <a href="#" class="forum-link">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150/1a5fb4/ffffff?text=桂林" alt="桂林">
+                            <div class="city-name">桂林</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="forum-item">
+                    <a href="#" class="forum-link">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150/2d7bc6/ffffff?text=长春" alt="长春">
+                            <div class="city-name">长春</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="forum-item">
+                    <a href="#" class="forum-link">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150/1a5fb4/ffffff?text=福州" alt="福州">
+                            <div class="city-name">福州</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="forum-item">
+                    <a href="#" class="forum-link">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/150/2d7bc6/ffffff?text=保定" alt="保定">
+                            <div class="city-name">保定</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <div class="sections-container">
             <section class="info-section">
                 <h3>文化</h3>
@@ -318,8 +668,8 @@
                 <h3>工具</h3>
                 <p>YOCSEF为成员和参与者提供多种工具和资源支持：</p>
                 <ul>
-                    <li><strong官方平台</strong>：官方网站(http://www.yocsef.org.cn)提供最新活动信息和资源</li>
-                    <li><strong>联系渠道</strong>：总部联系电话(+86)10 6256 2503，邮箱ccf@ccf.org.cn</li>
+                    <li><strong>官方平台</strong>：官方网站(http://www.yocsef.org.cn)提供最新活动信息和资源</li>
+                    <li><strong>联系渠道</strong>：总部联系电话(+86)10 6256 2503，邮箱ccf@ccf.org.cn[1,2](@ref)</li>
                     <li><strong>协作工具</strong>：使用现代化协作平台进行活动策划和组织</li>
                     <li><strong>媒体资源</strong>：与多家专业媒体合作，扩大论坛影响力</li>
                     <li><strong>文献资料</strong>：提供历年论坛总结报告和技术文档</li>
